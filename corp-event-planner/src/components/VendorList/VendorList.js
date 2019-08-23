@@ -1,12 +1,12 @@
 import React from "react";
 
-const Nav = () => {
+const VendorList = () => {
 
-    return (
+    return(
         <div>
 
         </div>
     )
 }
 
-export default Nav
+export default VendorList

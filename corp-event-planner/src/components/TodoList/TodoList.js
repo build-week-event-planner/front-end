@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nav = () => {
+const TodoList = () => {
 
     return (
         <div>
@@ -9,4 +9,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default TodoList
