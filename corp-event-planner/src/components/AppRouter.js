@@ -1,12 +1,12 @@
 import React from "react";
 
-import SignUp from "./Signup/Signup";
+import EventCard from "./Event/EventCard";
 
 const AppRouter = () => {
 
     return (
         <div>
-            <SignUp />
+            <EventCard />
         </div>
     )
 }

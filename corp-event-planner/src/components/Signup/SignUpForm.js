@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { Formik, Form, Field } from "formik";
 
 const SignUpForm = props => {
 
+    // const [signUpForm, setSignUpForm] = useState({
+    //     fullname: "",
+    //     email: "",
+    //     password: "",
+    //     companyname: "",
+    //     poc: "",
+    //     eventdescription: ""
+
     return (
         <div className="SignUpForm">
-            <form>
-                <label htmlFor="companyname" hidden>Company Name </label>
-                <input type="text" name="companyname" placeholder="Company Name" />
+            <h1>Sign Up</h1>
+            {/* <Formik
+                initialValues={{
+                    contact: {
 
-                <label htmlFor="poc" hidden>Point of Contact </label>
-                <input type="text" name="poc" placeholder="Point of Contact" />
-            </form>
+                    },
+                }} */}
+                <button type="submit">Sign Up</button>
+
 
         </div>
     )
