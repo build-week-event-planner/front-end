@@ -1,95 +1,126 @@
-import React, {useState, useEffect} from "react";
-import {Form, Field, withFormik} from "formik";
-import * as Yup from "yup";
-import axios from "axios";
+import React, {useState} from "react";
 
-const TodoForm = ({errors, touched, values, status}) => {
+
+const TodoForm = (props) => {
 
     const [todos, setTodos] = useState([]);
 
     console.log(todos)
 
-    useEffect ( () => {
-        
-        if (status) {
-            setTodo([...todos, status]);
+    const changeHandler = event => {
 
-        }
-    }, [status]);
+        setTodos({...todos, [event.target.name]: event.target.value});
+
+    }
+
+    const submitForm = event => {
+        event.preventDefault();
+    
+
+        const newTodo = {
+            todos,
+            id: Date.now()
+
+      }
+    }   
+
 
     return (
-        <div className="TodoForm">
-            <Form>
-                <Field
-                    component="input"
+            <form onSubmit={submitForm} className="form">
+                <label htmlFor="id"> ToDo Item # </label>
+                <input
                     type="text"
-                    name="todoName"
-                    placeholder="Enter the Name of Your ToDo Item"
-                />
-                     {touched.todoName && errors.todoName && (
-                    <p className="error">{errors.todoName}</p>
-                )}
+                    name="id"
+                    placeholder="To Do #"
+                    value={todo.id}
+                    onChange={changeHandler}
 
-                <Field
-                    component="input"
+                />
+
+                <label htmlFor="name"> Todo Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="ToDo Name"
+                    value={todo.name}
+                    onChange={changeHandler}
+
+                />
+
+
+                <label htmlFor="status"> Status </label>
+                <input
+                    type="radio"
+                    name="statusRadios"
+                    placeholder="Character ID #"
+                    value="option1"
+                    onChange={changeHandler}
+                    checked
+                />
+
+                <label htmlFor="species">Species</label>
+                <input
+                    type="text"
+                    name="species"
+                    placeholder="Species"
+                    value={char.species}
+                    onChange={changeHandler}
+
+                />
+
+
+                <label htmlFor="gender"> Gender</label>
+                <input
+                    type="text"
+                    name="gender"
+                    placeholder="Gender"
+                    value={char.gender}
+                    onChange={changeHandler}
+
+                />
+
+
+                <label htmlFor="origin"> Origin </label>
+                <input
+                    type="text"
+                    name="origin"
+                    placeholder="Origin"
+                    value={char.id}
+                    onChange={changeHandler}
+
+                />
+
+
+                <label htmlFor="location"> Location</label>
+                <input
                     type="text"
                     name="location"
-                    placeholder="Enter Todo Location Here"
+                    placeholder="Location"
+                    value={char.location}
+                    onChange={changeHandler}
+
                 />
-                {touched.location && errors.location && (
-                    <p className="error">{errors.location}</p>
-                )}
 
 
-                <Field 
-                    component="input"
-                    type="textarea"
-                    name="todoDetails"
-                    placeholder="Enter more details here"
+                <label htmlFor="created"> Date Created</label>
+                <input
+                    type="date"
+                    name="created"
+                    placeholder="Created"
+                    value={char.created}
+                    onChange={changeHandler}
+
                 />
-                {touched.todoDetails && errors.todoDetails && (
-                    <p className="error">{errors.todoDetails}</p>
-                )}
 
-                        
-                <label className="check">
-                    Mark as Completed
-                <Field
-                    type="checkbox"
-                    name="completed"
-                    placeholder="Mark as Complete"
-                    checked={values.checkbox}
-                />
-                </label>
+                <button type="submit"> Add Character </button>
 
-            </Form>
-
-            {todos.map(todo => {
-                <p key={todo.id}>{todo.name}</p>
-            
-            })}
-
-        </div>
+            </form>
 
     )
 
 
 
 }
-
-const handleTodoFormChng = withFormik({
-    mapPropsToValues({ todoName, location, todoDetails, checkbox}) {
-
-        return {
-            todoName: todoName || "",
-            location: location || "",
-            todoDetails: todoDetails || "",
-            checkbox: checkbox || false 
-
-        }
-    }
-})
-
 
 
 
