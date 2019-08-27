@@ -1,12 +1,12 @@
 import React from "react";
 
-// import EventCard from "./Event/EventCard";
+import Vendor from "./VendorList/Vendor";
 
 const AppRouter = () => {
 
     return (
         <div>
-            {/* <EventCard /> */}
+            <Vendor />
         </div>
     )
 }
