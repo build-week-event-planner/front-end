@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 
-const VendorForm = vendor => {
+const VendorForm = (props) => {
 
-    const [vendors, setVendors] = useState([]);
+    const [vendor, setVendor] = useState({vendorId: "", vendorName: "", vendorPhone: "", vendorBudget: ""});
 
-    console.log(vendors);
+    console.log(vendor);
 
     const changeHandler = event => {
 
-        setVendors({...vendors, [event.target.name]: event.target.value});
+        setVendor({...vendor, [event.target.name]: event.target.value});
 
     }
 
     const submitForm = event => {
         event.preventDefault();
+
+        const newVendor = {
+            ...vendor,
+            id: Date.now()
+        };
+
+        props.addVendor(newVendor);
 
     }
 

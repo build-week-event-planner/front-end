@@ -7,9 +7,6 @@ const EventCard = () => {
 
     const [eventCard, setEventCard] = useState('');
 
-
-   
-
     return (
         <div>
             <EventForm />

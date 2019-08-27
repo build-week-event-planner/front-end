@@ -8,11 +8,9 @@ const EventForm = () => {
 
     const [event, setEvent] = useState([])
 
-    console.log("EventForm:", event);
-
-    useEffect(() => {
+    useEffect( () => {
         axios.get("https://corporate-event-planner.herokuapp.com/events/all")
-            .then(res => {
+            .then(res => { 
                 console.log(res.data);
                 setEventCard(res.data);
 
@@ -20,27 +18,22 @@ const EventForm = () => {
             })
             .catch(err => {
                 console.log(res)
-
+                
             })
 
     }
-
-
     )
+
+    console.log("EventForm:", event);
 
     
 
     return (
-        <div> This is returning the Event form
-            
-        
-
+        <div>
         </div>
     )
 }
 
-
-
-
+            })
 
 export default EventForm
