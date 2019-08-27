@@ -4,6 +4,7 @@ import React, {useState} from "react";
 const TodoForm = (props) => {
 
     const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""})
+
     console.log(todos)
 
     const changeHandler = event => {
@@ -19,6 +20,7 @@ const TodoForm = (props) => {
         const newTodo = {
             todos,
             created: Date.now()
+
 
       }
     }   
@@ -78,7 +80,9 @@ const TodoForm = (props) => {
 
                 />
 
+
                 <button type="submit"> Add Todo </button>
+
 
             </form>
 
@@ -91,3 +95,4 @@ const TodoForm = (props) => {
 
 
 export default TodoForm
+
