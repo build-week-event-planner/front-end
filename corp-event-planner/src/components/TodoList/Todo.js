@@ -9,7 +9,9 @@ const Todo = () => {
 
     const [todoItem, setTodoItem] = useState(TodoData);
 
-    const addTodo = todo => {setTodoItem([...todoItem, todo])};
+    console.log(todoItem)
+
+    const addTodo = td => {setTodoItem([...todoItem, td])};
 
     return (
         <div className="Todo">
