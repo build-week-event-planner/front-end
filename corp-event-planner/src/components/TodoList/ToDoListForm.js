@@ -3,8 +3,7 @@ import React, {useState} from "react";
 
 const TodoForm = (props) => {
 
-    const [todos, setTodos] = useState([]);
-
+    const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""})
     console.log(todos)
 
     const changeHandler = event => {
@@ -19,7 +18,7 @@ const TodoForm = (props) => {
 
         const newTodo = {
             todos,
-            id: Date.now()
+            created: Date.now()
 
       }
     }   
@@ -32,7 +31,7 @@ const TodoForm = (props) => {
                     type="text"
                     name="id"
                     placeholder="To Do #"
-                    value={todo.id}
+                    value={todos.id}
                     onChange={changeHandler}
 
                 />
@@ -42,50 +41,17 @@ const TodoForm = (props) => {
                     type="text"
                     name="name"
                     placeholder="ToDo Name"
-                    value={todo.name}
+                    value={todos.todoName}
                     onChange={changeHandler}
 
                 />
 
-
-                <label htmlFor="status"> Status </label>
-                <input
-                    type="radio"
-                    name="statusRadios"
-                    placeholder="Character ID #"
-                    value="option1"
-                    onChange={changeHandler}
-                    checked
-                />
-
-                <label htmlFor="species">Species</label>
+                <label htmlFor="name"> Todo Details</label>
                 <input
                     type="text"
-                    name="species"
-                    placeholder="Species"
-                    value={char.species}
-                    onChange={changeHandler}
-
-                />
-
-
-                <label htmlFor="gender"> Gender</label>
-                <input
-                    type="text"
-                    name="gender"
-                    placeholder="Gender"
-                    value={char.gender}
-                    onChange={changeHandler}
-
-                />
-
-
-                <label htmlFor="origin"> Origin </label>
-                <input
-                    type="text"
-                    name="origin"
-                    placeholder="Origin"
-                    value={char.id}
+                    name="details"
+                    placeholder="ToDo Details"
+                    value={todos.todoDetails}
                     onChange={changeHandler}
 
                 />
@@ -96,7 +62,7 @@ const TodoForm = (props) => {
                     type="text"
                     name="location"
                     placeholder="Location"
-                    value={char.location}
+                    value={todos.location}
                     onChange={changeHandler}
 
                 />
@@ -107,12 +73,12 @@ const TodoForm = (props) => {
                     type="date"
                     name="created"
                     placeholder="Created"
-                    value={char.created}
+                    value={todos.created}
                     onChange={changeHandler}
 
                 />
 
-                <button type="submit"> Add Character </button>
+                <button type="submit"> Add Todo </button>
 
             </form>
 
