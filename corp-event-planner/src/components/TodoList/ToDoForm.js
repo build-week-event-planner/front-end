@@ -3,13 +3,13 @@ import React, {useState} from "react";
 
 const TodoForm = (props) => {
 
-    const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""});
+    const [todo, setTodo] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""});
 
-    console.log(todos);
+    console.log(todo);
 
     const changeHandler = event => {
 
-        setTodos({...todos, [event.target.name]: event.target.value});
+        setTodo({...todo, [event.target.name]: event.target.value});
 
     }
 
@@ -18,7 +18,7 @@ const TodoForm = (props) => {
     
 
         const newTodo = {
-            ...todos,
+            ...todo,
             created: Date.now()
 
 
@@ -36,27 +36,27 @@ const TodoForm = (props) => {
                     type="text"
                     name="id"
                     placeholder="To Do #"
-                    value={todos.id}
+                    value={todo.id}
                     onChange={changeHandler}
 
                 />
 
-                <label htmlFor="name"> Todo Name</label>
+                <label htmlFor="todoName"> Todo Name</label>
                 <input
                     type="text"
                     name="todoName"
                     placeholder="ToDo Name"
-                    value={todos.todoName}
+                    value={todo.todoName}
                     onChange={changeHandler}
 
                 />
 
-                <label htmlFor="name"> Todo Details</label>
+                <label htmlFor="todoDetails"> Todo Details</label>
                 <input
                     type="text"
                     name="todoDetails"
                     placeholder="ToDo Details"
-                    value={todos.todoDetails}
+                    value={todo.todoDetails}
                     onChange={changeHandler}
 
                 />
@@ -67,7 +67,7 @@ const TodoForm = (props) => {
                     type="text"
                     name="location"
                     placeholder="Location"
-                    value={todos.location}
+                    value={todo.location}
                     onChange={changeHandler}
 
                 />
@@ -78,7 +78,7 @@ const TodoForm = (props) => {
                     type="date"
                     name="created"
                     placeholder="Created"
-                    value={todos.created}
+                    value={todo.created}
                     onChange={changeHandler}
 
                 />
