@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
 
-const TodoForm = (props) => {
+const TodoForm = props => {
 
     const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""})
 
-    console.log(todos)
+    console.log(props)
 
     const changeHandler = event => {
 
@@ -18,11 +18,13 @@ const TodoForm = (props) => {
     
 
         const newTodo = {
-            todos,
+            ...todos,
             created: Date.now()
 
 
-      }
+      };
+
+      props.addTodo(newTodo);
     }   
 
 
@@ -41,7 +43,7 @@ const TodoForm = (props) => {
                 <label htmlFor="name"> Todo Name</label>
                 <input
                     type="text"
-                    name="name"
+                    name="todoName"
                     placeholder="ToDo Name"
                     value={todos.todoName}
                     onChange={changeHandler}
@@ -51,7 +53,7 @@ const TodoForm = (props) => {
                 <label htmlFor="name"> Todo Details</label>
                 <input
                     type="text"
-                    name="details"
+                    name="todoDetails"
                     placeholder="ToDo Details"
                     value={todos.todoDetails}
                     onChange={changeHandler}
@@ -87,11 +89,7 @@ const TodoForm = (props) => {
             </form>
 
     )
-
-
-
 }
-
 
 
 export default TodoForm

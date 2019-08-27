@@ -9,6 +9,8 @@ const Todo = () => {
 
     const [todoItem, setTodoItem] = useState(TodoData);
 
+    console.log(todoItem)
+
     const addTodo = todo => {setTodoItem([...todoItem, todo])};
 
     return (

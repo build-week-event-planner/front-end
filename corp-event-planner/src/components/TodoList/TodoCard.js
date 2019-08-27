@@ -4,7 +4,7 @@ const TodoCard = props => {
 
     return (
         <div>
-        {props.todos.map(todo => {
+        {props.todo.map(todo => {
             return (
                 <div>
                     <h3>{todo.id}</h3>
