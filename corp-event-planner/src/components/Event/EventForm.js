@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Form, Field, withFormik} from "formik";
 
 import axios from "axios";
 
@@ -9,41 +8,31 @@ const EventForm = () => {
 
     const [event, setEvent] = useState([])
 
+    useEffect( () => {
+        axios.get("https://corporate-event-planner.herokuapp.com/events/all")
+            .then(res => { 
+                console.log(res.data);
+                setEventCard(res.data);
+
+
+            })
+            .catch(err => {
+                console.log(res)
+                
+            })
+
+    }
+    )
+
     console.log("EventForm:", event);
 
     
 
     return (
-        <div className="eventForm">
-            <Form>
-
-            form fields and values are set here
-
-
-            </Form>
-        
-
+        <div>
         </div>
     )
 }
 
 
-
-
-const formikOnChange = withFormik({
-    mapPropsToValues( { props go here }) {
-
-        return {
-
-            values from form go here
-        };
-
-    };
-
-
-})
-
-const eventFormWithFormik = formikOnChange(EventForm)
-
-
-export default eventFormWithFormik
+export default EventForm
