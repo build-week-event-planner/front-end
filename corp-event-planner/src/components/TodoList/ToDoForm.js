@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
 
-const TodoForm = props => {
+const TodoForm = (props) => {
 
-    const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""})
+    const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""});
 
-    console.log(props)
+    console.log(todos);
 
     const changeHandler = event => {
 
@@ -22,9 +22,10 @@ const TodoForm = props => {
             created: Date.now()
 
 
-      };
+         };
 
       props.addTodo(newTodo);
+      
     }   
 
 

@@ -11,6 +11,7 @@ const EventCard = () => {
         <div>
             <EventForm />
             <Todo />
+            <Vendor />
 
         </div>
     )

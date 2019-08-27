@@ -11,7 +11,7 @@ const Todo = () => {
 
     console.log(todoItem)
 
-    const addTodo = todo => {setTodoItem([...todoItem, todo])};
+    const addTodo = td => {setTodoItem([...todoItem, td])};
 
     return (
         <div className="Todo">
