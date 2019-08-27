@@ -6,25 +6,6 @@ const EventCard = () => {
 
     const [eventCard, setEventCard] = useState('');
 
-
-    useEffect( () => {
-        axios.get("https://corporate-event-planner.herokuapp.com/events/all")
-            .then(res => { 
-                console.log(res.data);
-                setEventCard(res.data);
-
-
-            })
-            .catch(err => {
-                console.log(res)
-                
-            })
-
-    }
-
-
-    )
-
     return (
         <div>
             <EventForm />

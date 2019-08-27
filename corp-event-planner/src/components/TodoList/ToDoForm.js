@@ -18,7 +18,7 @@ const TodoForm = (props) => {
     
 
         const newTodo = {
-            todos,
+            ...todos,
             created: Date.now()
 
 
