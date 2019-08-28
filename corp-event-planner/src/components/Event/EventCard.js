@@ -1,8 +1,7 @@
 import React  from "react";
-import Todo from "../TodoList/Todo";
-import Vendor from "../VendorList/Vendor";
 
-const EventCard = () => {
+
+const EventCard = (props) => {
 
     return (
         <div>
@@ -23,9 +22,6 @@ const EventCard = () => {
             ) 
                 
             })}
-            
-            <Todo />
-            <Vendor />
 
         </div>
 

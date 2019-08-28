@@ -1,12 +1,13 @@
 import React from "react";
-import EventCard from "./Event/EventCard";
+import LoginForm from "./Login/LoginForm";
 
 
 const AppRouter = () => {
 
     return (
         <div>
-            <EventCard />
+            <LoginForm />
+            
         </div>
     )
 }

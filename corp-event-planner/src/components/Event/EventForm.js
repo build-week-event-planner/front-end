@@ -12,13 +12,14 @@ const EventForm = () => {
     useEffect( () => {
         axios.get("https://corporate-event-planner.herokuapp.com/events/all")
             .then(res => { 
+                setEvent(res.data);
                 console.log(res.data);
-                setEventCard(res.data);
+
 
 
             })
             .catch(err => {
-                console.log(res)
+                console.log(err )
                 
             })
 
