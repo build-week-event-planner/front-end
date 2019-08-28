@@ -41,7 +41,7 @@ const TodoForm = (props) => {
 
                 />
 
-                <label htmlFor="name"> Todo Name</label>
+                <label htmlFor="todoName"> Todo Name</label>
                 <input
                     type="text"
                     name="todoName"
@@ -51,7 +51,7 @@ const TodoForm = (props) => {
 
                 />
 
-                <label htmlFor="name"> Todo Details</label>
+                <label htmlFor="todoDetails"> Todo Details</label>
                 <input
                     type="text"
                     name="todoDetails"
