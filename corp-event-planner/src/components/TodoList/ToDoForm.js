@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 
 const TodoForm = (props) => {
 
-    const [todo, setTodo] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""});
+    const [todo, setTodo] = useState({id: "", todoName: "", todoDetails: "", location: ""});
 
     console.log(todo);
 
-    const changeHandler = event => {
+    const tdchangeHandler = event => {
 
         setTodo({...todo, [event.target.name]: event.target.value});
 
@@ -19,7 +19,7 @@ const TodoForm = (props) => {
 
         const newTodo = {
             ...todo,
-            created: Date.now()
+            id: Date.now()
 
 
          };
@@ -37,7 +37,7 @@ const TodoForm = (props) => {
                     name="id"
                     placeholder="To Do #"
                     value={todo.id}
-                    onChange={changeHandler}
+                    onChange={tdchangeHandler}
 
                 />
 
@@ -47,7 +47,7 @@ const TodoForm = (props) => {
                     name="todoName"
                     placeholder="ToDo Name"
                     value={todo.todoName}
-                    onChange={changeHandler}
+                    onChange={tdchangeHandler}
 
                 />
 
@@ -57,7 +57,7 @@ const TodoForm = (props) => {
                     name="todoDetails"
                     placeholder="ToDo Details"
                     value={todo.todoDetails}
-                    onChange={changeHandler}
+                    onChange={tdchangeHandler}
 
                 />
 
@@ -68,18 +68,7 @@ const TodoForm = (props) => {
                     name="location"
                     placeholder="Location"
                     value={todo.location}
-                    onChange={changeHandler}
-
-                />
-
-
-                <label htmlFor="created"> Date Created</label>
-                <input
-                    type="date"
-                    name="created"
-                    placeholder="Created"
-                    value={todo.created}
-                    onChange={changeHandler}
+                    onChange={tdchangeHandler}
 
                 />
 
