@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import axios from "axios";
 
@@ -7,6 +7,7 @@ import axios from "axios";
 const EventForm = () => {
 
     const [event, setEvent] = useState([])
+
 
     useEffect( () => {
         axios.get("https://corporate-event-planner.herokuapp.com/events/all")
@@ -34,6 +35,6 @@ const EventForm = () => {
     )
 }
 
-            })
+            
 
 export default EventForm
