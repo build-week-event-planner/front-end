@@ -24,23 +24,23 @@ const Login = (props) => {
     }
 
     return (
-        <form onSubmit={this.login} className="loginForm">
+        <form onSubmit={login} className="loginForm">
             <label htmlFor="userName"> Username</label>
             <input
                 type="text"
                 name="userName"
                 placeholder="UserName"
                 value={credentials.userName}
-                onChange={this.changeHandler}
+                onChange={changeHandler}
             />
 
             <label htmlFor="password"> Password</label>
             <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 value={credentials.password}
-                onChange={this.changeHandler}
+                onChange={changeHandler}
             />
 
             <button type="submit">Login</button>
