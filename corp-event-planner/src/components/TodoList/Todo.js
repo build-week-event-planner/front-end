@@ -11,7 +11,9 @@ const Todo = () => {
 
     console.log(todoItem)
 
-    const addTodo = td => {setTodoItem([...todoItem, td])};
+
+    const addTodo = todo => { setTodoItem([...todoItem, todo]) };
+
 
     return (
         <div className="Todo">
@@ -21,6 +23,6 @@ const Todo = () => {
 
         </div>
     )
-};
+}
 
 export default Todo

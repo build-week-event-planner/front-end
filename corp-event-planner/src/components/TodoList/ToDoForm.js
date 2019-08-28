@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 
 const TodoForm = (props) => {
 
-    const [todos, setTodos] = useState({id: "", todoName: "", todoDetails: "", location: "", created: ""});
+    const [todo, setTodo] = useState({id: "", todoName: "", todoDetails: "", location: ""});
 
-    console.log(todos);
+    console.log(todo);
 
-    const changeHandler = event => {
+    const tdchangeHandler = event => {
 
-        setTodos({...todos, [event.target.name]: event.target.value});
+        setTodo({...todo, [event.target.name]: event.target.value});
 
     }
 
@@ -18,8 +18,8 @@ const TodoForm = (props) => {
     
 
         const newTodo = {
-            ...todos,
-            created: Date.now()
+            ...todo,
+            id: Date.now()
 
 
          };
@@ -36,28 +36,28 @@ const TodoForm = (props) => {
                     type="text"
                     name="id"
                     placeholder="To Do #"
-                    value={todos.id}
-                    onChange={changeHandler}
+                    value={todo.id}
+                    onChange={tdchangeHandler}
 
                 />
 
-                <label htmlFor="name"> Todo Name</label>
+                <label htmlFor="todoName"> Todo Name</label>
                 <input
                     type="text"
                     name="todoName"
                     placeholder="ToDo Name"
-                    value={todos.todoName}
-                    onChange={changeHandler}
+                    value={todo.todoName}
+                    onChange={tdchangeHandler}
 
                 />
 
-                <label htmlFor="name"> Todo Details</label>
+                <label htmlFor="todoDetails"> Todo Details</label>
                 <input
                     type="text"
                     name="todoDetails"
                     placeholder="ToDo Details"
-                    value={todos.todoDetails}
-                    onChange={changeHandler}
+                    value={todo.todoDetails}
+                    onChange={tdchangeHandler}
 
                 />
 
@@ -67,19 +67,8 @@ const TodoForm = (props) => {
                     type="text"
                     name="location"
                     placeholder="Location"
-                    value={todos.location}
-                    onChange={changeHandler}
-
-                />
-
-
-                <label htmlFor="created"> Date Created</label>
-                <input
-                    type="date"
-                    name="created"
-                    placeholder="Created"
-                    value={todos.created}
-                    onChange={changeHandler}
+                    value={todo.location}
+                    onChange={tdchangeHandler}
 
                 />
 

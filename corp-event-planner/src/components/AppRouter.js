@@ -1,12 +1,13 @@
 import React from "react";
+import LoginForm from "./Login/LoginForm";
 
-import Vendor from "./VendorList/Vendor";
 
 const AppRouter = () => {
 
     return (
         <div>
-            <Vendor />
+            <LoginForm />
+            
         </div>
     )
 }

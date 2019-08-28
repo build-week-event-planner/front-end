@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import axios from "axios";
 
@@ -8,16 +8,18 @@ const EventForm = () => {
 
     const [event, setEvent] = useState([])
 
+
     useEffect( () => {
         axios.get("https://corporate-event-planner.herokuapp.com/events/all")
             .then(res => { 
+                setEvent(res.data);
                 console.log(res.data);
-                setEventCard(res.data);
+
 
 
             })
             .catch(err => {
-                console.log(res)
+                console.log(err )
                 
             })
 
@@ -34,6 +36,6 @@ const EventForm = () => {
     )
 }
 
-            })
+            
 
 export default EventForm
