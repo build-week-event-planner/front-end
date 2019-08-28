@@ -16,8 +16,18 @@ const AppRouter = () => {
     )
 
 
-function useCustomHook()
+    function useCustomHook(name) {
+        const [storage, setStorage] = useState(localStorage.getItem(name));
 
-}
+        const placeInStorage = value => {
+            localStorage.setItem(name, value);
+            setStorage(value);
+        };
+        const removeFromStorage = () => {
+            localStorage.removeItem(name);
+            setStorage();
+        };
+        return [storage, placeInStorage, removeFromStorage];
+    }
 
 export default AppRouter
