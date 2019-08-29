@@ -1,16 +1,17 @@
 import React from 'react';
 import Nav from "./components/Nav";
-import AppRouter from "./components/AppRouter";
 import './App.css';
+import Dashboard from './components/Dashboard';
 
 function App() {
+
   return (
     <div>
       <Nav />
-      <AppRouter />
+      <Dashboard />
       <p> this is working:)</p>
     </div>
-  );
+  )
 }
 
 export default App;
