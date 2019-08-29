@@ -13,6 +13,8 @@ export const AppRouter = () => {
         <div className="AppRouter">
             {token ? <Dashboard /> : <Logout />}
             <button onClick={() => setToken("myToken")}> Log In </button>
+
+
         </div>
     )
 
@@ -30,3 +32,4 @@ export const AppRouter = () => {
         };
         return [storage, placeInStorage, removeFromStorage];
     };
+};
