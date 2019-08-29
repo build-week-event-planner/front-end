@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Dashboard from "../components/Dashboard";
 import Logout from "../components/Logout";
 
-export const AppRouter = () => {
+ const AppRouter = () => {
 
     const [token, setToken, removeToken] = useCustomHook("token");
 
@@ -28,4 +28,6 @@ export const AppRouter = () => {
             setStorage();
         };
         return [storage, placeInStorage, removeFromStorage];
-    };
+    }}
+
+    export default AppRouter
