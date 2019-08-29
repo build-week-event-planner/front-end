@@ -9,7 +9,8 @@ const Login = (props) => {
         event.preventDefault();
         axiosWithAuth.post('https://corporate-event-planner.herokuapp.com/login', credentials)
                 .then(res => {
-                    console.log(res.data)
+                    console.log(res.data.token)
+
                     localStorage.setItem('token', res.data.token);
                     this.props.history.push('/');
                 })
