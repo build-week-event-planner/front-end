@@ -1,11 +1,11 @@
 import React from "react";
-import EventCard from "./Event/EventCard";
+import Event from "./Event/Event";
 
 const Home = () => {
 
     return (
-        <div>
-
+        <div className="dashboard">
+            <Event />
         </div>
     )
 }
