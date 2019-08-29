@@ -1,49 +1,86 @@
-import React, {useState} from "react";
-import {Form, Field, withFormik} from "formik";
-
-import axios from "axios";
+import React, { useState } from "react";
 
 
+const EventForm = (props) => {
 
-const EventForm = () => {
+    const [singleevent, setSingleEvent] = useState({ id: "", eventName: "", eventDetails: "", location: "" });
 
-    const [event, setEvent] = useState([])
+    console.log(singleevent);
 
-    console.log("EventForm:", event);
+    const eChngHandler = event => {
 
-    
+        setSingleEvent({ ...singleevent, [event.target.name]: event.target.value });
+
+    }
+
+    const submitForm = event => {
+        event.preventDefault();
+
+
+        const newSingleEvent = {
+            ...singleevent,
+            id: Date.now()
+
+
+        };
+
+        props.addNewEvent(newSingleEvent);
+
+    }
+
 
     return (
-        <div className="eventForm">
-            <Form>
+        <form onSubmit={submitForm} className="form">
+            <label htmlFor="id"> Event ID # </label>
+            <input
+                type="text"
+                name="id"
+                placeholder="Event Id #"
+                value={singleevent.id}
+                onChange={eChngHandler}
 
-            form fields and values are set here
+            />
+
+            <label htmlFor="eName"> Event Name</label>
+            <input
+                type="text"
+                name="eName"
+                placeholder="Event Name"
+                value={singleevent.eName}
+                onChange={eChngHandler}
+
+            />
+
+            <label htmlFor="eDetails"> Event Details</label>
+            <input
+                type="text"
+                name="eDetails"
+                placeholder="Event Details"
+                value={singleevent.eDetails}
+                onChange={eChngHandler}
+
+            />
 
 
-            </Form>
-        
+            <label htmlFor="location"> Event Location</label>
+            <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                value={singleevent.location}
+                onChange={eChngHandler}
 
-        </div>
+            />
+
+
+            <button type="submit"> Create Event </button>
+
+
+        </form>
+
     )
 }
 
 
+export default EventForm
 
-
-const formikOnChange = withFormik({
-    mapPropsToValues( { props go here }) {
-
-        return {
-
-            values from form go here
-        };
-
-    };
-
-
-})
-
-const eventFormWithFormik = formikOnChange(EventForm)
-
-
-export default eventFormWithFormik
