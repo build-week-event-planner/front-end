@@ -7,11 +7,10 @@ import Logout from "../components/Logout";
     const [token, setToken, removeToken] = useCustomHook("token");
 
     return (
+
         <div className="AppRouter">
             {token ? <Dashboard /> : <Logout />}
             <button onClick={() => setToken("myToken")}> Log In </button>
-            
-            
         </div>
     )
 
