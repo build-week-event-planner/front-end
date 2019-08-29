@@ -1,6 +1,7 @@
 import React  from "react";
 import Todo from "../TodoList/Todo";
 import Vendor from "../VendorList/Vendor";
+import Calendar from "../Calendar";
 
 
 const EventCard = (props) => {
@@ -16,7 +17,8 @@ const EventCard = (props) => {
                     <h3>{singleevent.id}</h3>
                     <h3>{singleevent.eName}</h3>
                     <h3>{singleevent.eDetails}</h3>
-                    <h3>{singleevent.location}</h3>                    
+                    <h3>{singleevent.location}</h3> 
+                    <Calendar />                   
                     <Todo />
                     <Vendor />
                 </div>     
