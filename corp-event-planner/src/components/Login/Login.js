@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axiosWithAuth from "../../axiosAuth";
 
 const Login = (props) => {
 
     const [credentials, setCredentials] = useState({});
 
+    useEffect( () => {
     const login = event => {
         event.preventDefault();
         axiosWithAuth.post('https://corporate-event-planner.herokuapp.com/login', credentials)
@@ -14,7 +15,8 @@ const Login = (props) => {
                     localStorage.setItem('token', res.data.token);
                     this.props.history.push('/');
                 })
-    }
+                .catch(err => console.log(err))
+    }}, [])
 
     const changeHandler = event => {
 
@@ -25,7 +27,7 @@ const Login = (props) => {
     }
 
     return (
-        <form onSubmit={login} className="loginForm">
+        <form onSubmit={this.login} className="loginForm">
             <label htmlFor="userName"> Username</label>
             <input
                 type="text"
