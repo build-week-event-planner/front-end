@@ -18,7 +18,7 @@ const EventForm = (props) => {
 
 
         const newSingleEvent = {
-            ...todo,
+            ...singleevent,
             id: Date.now()
 
 
@@ -51,7 +51,7 @@ const EventForm = (props) => {
 
             />
 
-            <label htmlFor="todoDetails"> Event Details</label>
+            <label htmlFor="eDetails"> Event Details</label>
             <input
                 type="text"
                 name="eDetails"
@@ -82,5 +82,5 @@ const EventForm = (props) => {
 }
 
 
-export default TodoForm
+export default EventForm
 

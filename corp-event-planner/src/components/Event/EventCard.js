@@ -1,23 +1,25 @@
 import React  from "react";
+import Todo from "../TodoList/Todo";
+import Vendor from "../VendorList/Vendor";
 
 
 const EventCard = (props) => {
 
+    console.log("eventProps:", props)
+
     return (
         <div>
-            {props.event.map( event => {
+            {props.eventItem.map( singleevent => {
             
             return (
                 <div>
-                    <h3>Event form element 1</h3>
-                    <h3>2</h3>
-                    <h3>3</h3>
-                    <h3>4</h3>
-                    <h3>5</h3>
-                    
-                    
-                </div>   
-                
+                    <h3>{singleevent.id}</h3>
+                    <h3>{singleevent.eName}</h3>
+                    <h3>{singleevent.eDetails}</h3>
+                    <h3>{singleevent.location}</h3>                    
+                    <Todo />
+                    <Vendor />
+                </div>     
                 
             ) 
                 
