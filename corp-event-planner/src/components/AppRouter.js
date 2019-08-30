@@ -11,6 +11,8 @@ import Logout from "../components/Logout";
         <div className="AppRouter">
             {token ? <Dashboard /> : <Logout />}
             <button onClick={() => setToken("myToken")}> Log In </button>
+
+
         </div>
     )
 

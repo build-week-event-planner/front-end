@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 // import SignUpForm from "./SignUpForm";
 
-const Signup = () => {
+const Signup = props => {
+
+    const [credentials, setCredentials] = useState( {} ),
+
+    const signup = event => {
+        event.preventDefault();
+        
+    }
 
     return (
         <form onSubmit={signup} className="signUpForm">
@@ -33,16 +40,16 @@ const Signup = () => {
                 onChange={changeHandler}
             />
 
-            {/* <label htmlFor="email"> Email</label>
+            <label htmlFor="email"> Email</label>
             <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={credentials.password}
+                type="text"
+                name="email"
+                placeholder="Email"
+                value={credentials.email}
                 onChange={changeHandler}
-            /> */}
+            />
 
-            <button type="submit">Login</button>
+            <button type="submit">Sign Up</button>
 
         </form>
     )
