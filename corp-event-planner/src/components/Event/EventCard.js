@@ -3,6 +3,20 @@ import Todo from "../TodoList/Todo";
 import Vendor from "../VendorList/Vendor";
 import Calendar from "../Calendar";
 
+import styled from 'styled-components';
+
+
+const ECard = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border; 2px solid black;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 50px;
+
+
+`
 
 const EventCard = (props) => {
 
@@ -13,7 +27,8 @@ const EventCard = (props) => {
             {props.eventItem.map( singleevent => {
             
             return (
-                <div>
+                <ECard className="eventCard">
+            
                     <h3>{singleevent.id}</h3>
                     <h3>{singleevent.eName}</h3>
                     <h3>{singleevent.eDetails}</h3>
@@ -21,7 +36,7 @@ const EventCard = (props) => {
                     <Calendar />                   
                     <Todo />
                     <Vendor />
-                </div>     
+                </ECard>     
                 
             ) 
                 

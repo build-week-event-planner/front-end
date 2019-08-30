@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import styled from "styled-components";
+
 
 const EventForm = (props) => {
 
@@ -28,9 +30,21 @@ const EventForm = (props) => {
 
     }
 
+    const EForm = styled.div`
+        display: flex;
+        flex-flow: column wrap;
+        width: 750px;
+        border: 3px solid #1D3461;
+        margin: 50px auto;
+        padding: 100px;
+
+    
+    `
+
 
     return (
-        <form onSubmit={submitForm} className="form">
+        <EForm >
+        <form onSubmit={submitForm} className="form" style={{textAlign: "center"}}>
             <label htmlFor="id"> Event ID # </label>
             <input
                 type="text"
@@ -38,6 +52,7 @@ const EventForm = (props) => {
                 placeholder="Event Id #"
                 value={singleevent.id}
                 onChange={eChngHandler}
+                style={{padding: "30px, 300px"}}
 
             />
 
@@ -77,6 +92,7 @@ const EventForm = (props) => {
 
 
         </form>
+        </EForm>
 
     )
 }
