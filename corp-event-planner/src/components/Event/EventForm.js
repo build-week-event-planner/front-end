@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Event.css";
 
 import styled from "styled-components";
 
@@ -45,8 +46,10 @@ const EventForm = (props) => {
     return (
         <EForm >
         <form onSubmit={submitForm} className="form" style={{textAlign: "center"}}>
+            <h2>Create A New Event!</h2>
             <label htmlFor="id"> Event ID # </label>
             <input
+                className="form-control"
                 type="text"
                 name="id"
                 placeholder="Event Id #"
@@ -58,6 +61,7 @@ const EventForm = (props) => {
 
             <label htmlFor="eName"> Event Name</label>
             <input
+                className="form-control"
                 type="text"
                 name="eName"
                 placeholder="Event Name"
@@ -68,6 +72,7 @@ const EventForm = (props) => {
 
             <label htmlFor="eDetails"> Event Details</label>
             <input
+                className="form-control"
                 type="text"
                 name="eDetails"
                 placeholder="Event Details"
@@ -79,6 +84,7 @@ const EventForm = (props) => {
 
             <label htmlFor="location"> Event Location</label>
             <input
+                className="form-control"
                 type="text"
                 name="location"
                 placeholder="Location"
@@ -88,7 +94,7 @@ const EventForm = (props) => {
             />
 
 
-            <button type="submit"> Create Event </button>
+                <button type="submit" className="btn btn-primary"> Create Event </button>
 
 
         </form>
