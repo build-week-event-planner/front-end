@@ -40,7 +40,12 @@ const EventCard = (props) => {
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
                                     See Event Details
                                 </button>
-
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                                    See Event Details
+                                </button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+                                    See Event Details
+                                </button>
                                 {/* Modal  */}
                                 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
