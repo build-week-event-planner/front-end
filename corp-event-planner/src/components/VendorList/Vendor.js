@@ -13,7 +13,7 @@ const Vendor = () => {
 
     return(
         <div className="Vendor">
-            <h2>Add Any Vendors for Your Event Here!</h2>
+            <h2 style={{ textAlign: "center" }}>Add Any Vendors for Your Event Here!</h2>
             <VendorForm addVendor={addVendor} />
             <VendorCard vendor={vendor} />
         </div>

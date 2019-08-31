@@ -15,7 +15,7 @@ const SingleEvent = () => {
     return (
 
        <div className="singleEvent">
-           <h2>Create a New Event to Manage!</h2>
+            <h2 style={{ textAlign: "center" }}>Create a New Event to Manage!</h2>
             <EventForm addNewEvent={addNewEvent}  />
             <EventCard eventItem={eventItem} />
             

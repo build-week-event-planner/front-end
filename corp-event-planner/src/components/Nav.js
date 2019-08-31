@@ -19,11 +19,6 @@ const aboutLabel = createLabel("aboutus", "About Us");
 
 const dashboardLabel = createLabel("dashboard", "Home");
 
-const eventLabel = createLabel("events", "Events");
-
-const todoLabel = createLabel("todo", "View Todo's");
-
-const vendorLabel = createLabel("vendor", "View Vendors");
 
 
 const panes = [
@@ -33,12 +28,6 @@ const panes = [
   { menuItem: <Menu.Item key='aboutus' as={Nav} to={'https://event-planner-20193-ui.netlify.com/about.html'} content={aboutLabel} /> },
 
   { menuItem: <Menu.Item key='dashboard' as={Nav} to={'/dashboard'} content={dashboardLabel} /> },
-
-  { menuItem: <Menu.Item key='event' as={Nav} to={'/event'} content={eventLabel} /> },
-
-  { menuItem: <Menu.Item key='todo' as={Nav} to={'/todo'} content={todoLabel} /> },
-
-  { menuItem: <Menu.Item key='vendor' as={Nav} to={'/vendor'} content={vendorLabel} /> },
 
 ];
 

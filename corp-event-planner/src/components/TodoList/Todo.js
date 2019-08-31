@@ -15,7 +15,7 @@ const Todo = () => {
 
     return (
         <div className="Todo">
-            <h2> Add a Todo Item to Your Event!</h2>
+            <h2 style={{ textAlign: "center" }}> Add a Todo Item to Your Event!</h2>
             <TodoForm addTodo={addTodo} />
             <TodoCard todoItem={todoItem} />
 
