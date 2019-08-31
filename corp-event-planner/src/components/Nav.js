@@ -7,17 +7,19 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Link = styled.span`
-    font-size: 1.6rem;
-    width: 100%;
-    padding: 25px;
-    text-align: center;
-    line-height: 1.5;
-    margin: auto 0;
-    font-style: italic;
-    color: #04080F;
-    background-color: #605F5E;
-    border-color: #DAE3E5;
-`;
+
+     font-size: 1.6rem;
+     width: 100%;
+     padding: 25px;
+     text-align: center;
+     line-height: 1.5;
+     margin: auto 0;
+     font-style: italic;
+     color: #04080F;
+     background-color: #605F5E;
+     border-color: #DAE3E5;
+ `;
+
 
 
 const Nav = props => (
