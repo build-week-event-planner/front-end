@@ -1,0 +1,19 @@
+input{
+  padding: 20px 0;
+}
+
+label{
+  padding: 20px 0;
+}
+
+
+.btn{
+    margin: 20px 0;
+}
+
+.mainCard{
+
+    display: flex;
+    justify-content: center;
+   
+}
