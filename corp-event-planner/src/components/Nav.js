@@ -14,6 +14,9 @@ const Link = styled.span`
     line-height: 1.5;
     margin: auto 0;
     font-style: italic;
+    color: #04080F;
+    background-color: #605F5E;
+    border-color: #DAE3E5;
 `;
 
 
