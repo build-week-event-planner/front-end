@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 
-const Span = styled.span`
+const Link = styled.span`
     font-size: 1.6rem;
     width: 100%;
     padding: 25px;
@@ -23,7 +23,7 @@ const Nav = props => (
 
 );
 
-const createLabel = (iconName, labelText) => <span><Icon name={iconName} /> {labelText}</span>
+const createLabel = (iconName, labelText) => <Link><Icon name={iconName} /> {labelText}</Link>
 
 const homeLabel = createLabel("home", "Back to Site");
 
