@@ -1,118 +1,50 @@
 import React from "react";
 
-import { Menu } from "semantic-ui-react";
+import { Tab, Menu , Icon} from "semantic-ui-react";
 
 import { NavLink } from "react-router-dom";
 
-    // state = {}
-
-    // handleItemClick = (event, { name }) => this.setState({activeItem: name })
-
-    // render() {
-    //     const { activeItem } = this.state
-    // }
 
 const Nav = props => (
 
-    <NavLink exact {...props} activeClassName="active" />
-    
-    );
+  <NavLink exact {...props} activeClassName="active" />
 
-const createLabel = (labelText) => <span>
-    {labelText} 
-    </span>
+);
 
-const homeLabel = createLabel("home");
+const createLabel = (iconName, labelText) => <span><Icon name={iconName} /> {labelText}</span>
 
-const aboutLabel = createLabel("aboutus");
+const homeLabel = createLabel("home", "Back to Site");
 
-const dashboardLabel = createLabel("dashboard");
+const aboutLabel = createLabel("aboutus", "About Us");
 
-const eventLabel = createLabel("events");
+const dashboardLabel = createLabel("dashboard", "Home");
 
-const todoLabel = createLabel("todo");
+const eventLabel = createLabel("events", "Events");
 
-const vendorLabel = createLabel("vendor");
+const todoLabel = createLabel("todo", "View Todo's");
+
+const vendorLabel = createLabel("vendor", "View Vendors");
 
 
 const panes = [
 
-    {menuItem: <Menu.Item key='home' as={Nav} to={'https://event-planner-20193-ui.netlify.com'} content={homeLabel} />},
+  { menuItem: <Menu.Item key='home' as={Nav} to={'https://event-planner-20193-ui.netlify.com'} content={homeLabel} /> },
 
-    {menuItem: <Menu.Item key='aboutus' as={Nav} to={'https://event-planner-20193-ui.netlify.com/about.html'} content={aboutLabel} />},
+  { menuItem: <Menu.Item key='aboutus' as={Nav} to={'https://event-planner-20193-ui.netlify.com/about.html'} content={aboutLabel} /> },
 
-    {menuItem: <Menu.Item key='dashboard' as={Nav} to={'/dashboard'} content={dashboardLabel} />},
+  { menuItem: <Menu.Item key='dashboard' as={Nav} to={'/dashboard'} content={dashboardLabel} /> },
 
-    {menuItem: <Menu.Item key='event' as={Nav} to={'/event'} content={eventLabel} />},
+  { menuItem: <Menu.Item key='event' as={Nav} to={'/event'} content={eventLabel} /> },
 
-    {menuItem: <Menu.Item key='todo' as={Nav} to={'/todo'} content={todoLabel} />},
+  { menuItem: <Menu.Item key='todo' as={Nav} to={'/todo'} content={todoLabel} /> },
 
-    {menuItem: <Menu.Item key='vendor' as={Nav} to={'/vendor'} content={vendorLabel} />},
+  { menuItem: <Menu.Item key='vendor' as={Nav} to={'/vendor'} content={vendorLabel} /> },
 
 ];
 
 
 
-        return (
 
-            <Menu>
-            <Menu.Item
-            name='Home'
-            active={activeItem === 'https://event-planner-20193-ui.netlify.com'}
-            onClick={this.handleItemClick}
-            >
-            <Icon name='home'> Home</Icon>
-            </Menu.Item>
+const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
 
-            <Menu.Item
-            name='aboutus'
-            active={activeItem === 'https://event-planner-20193-ui.netlify.com/about.html'}
-            onClick={this.handleItemClick}
-            >
-            About Us
-            </Menu.Item>
-
-            <Menu.Item
-            name='dashboard'
-            active={activeItem === 'dashboard'}
-            onClick={this.handleItemClick}
-            >
-            Dashboard
-            </Menu.Item>
-
-            <Menu.Item
-            name='events'
-            active={activeItem === 'event'}
-            onClick={this.handleItemClick}
-            >
-            Events
-            </Menu.Item>
-            
-            <Menu.Item
-            name='todo'
-            active={activeItem === 'todo'}
-            onClick={this.handleItemClick}
-            >
-            To Do
-            </Menu.Item>
-            
-            <Menu.Item
-            name='vendor'
-            active={activeItem === 'vendor'}
-            onClick={this.handleItemClick}
-            >
-            Vendor
-            </Menu.Item>
-
-            <Menu.Item
-            name='contactus'
-            active={activeItem === 'CONTACTUS URL'}
-            onClick={this.handleItemClick}
-            >
-            Contact Us
-            </Menu.Item>
-        </Menu>
-        )
-    
-
-export default Nav
+export default TabNav
