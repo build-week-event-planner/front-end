@@ -33,6 +33,7 @@ const panes = [
 
 
 
+
 const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
 
 export default TabNav
