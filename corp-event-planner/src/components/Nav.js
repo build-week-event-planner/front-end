@@ -4,6 +4,18 @@ import { Tab, Menu , Icon} from "semantic-ui-react";
 
 import { NavLink } from "react-router-dom";
 
+import styled from "styled-components";
+
+const Span = styled.span`
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    line-height: 1.5;
+    margin: auto 0;
+    font-style: italic;
+`;
+
 
 const Nav = props => (
 
