@@ -9,8 +9,7 @@ function App() {
     <div>
       <TabNav />
       <Dashboard />
-      <p> this is working:)</p>
-    </div>
+          </div>
   )
 }
 

@@ -1,6 +1,5 @@
 import React  from "react";
-import Todo from "../TodoList/Todo";
-import Vendor from "../VendorList/Vendor";
+
 import Calendar from "../Calendar";
 import "./Event.css";
 
@@ -40,12 +39,7 @@ const EventCard = (props) => {
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
                                     See Event Details
                                 </button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-                                    See Event Details
-                                </button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-                                    See Event Details
-                                </button>
+                            
                                 {/* Modal  */}
                                 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -59,12 +53,13 @@ const EventCard = (props) => {
                                             <div class="modal-body">
                                                 <p> Event Locaiton: {singleevent.location} </p>
                                                 <p> Event Details: {singleevent.eDetails} </p>
+                                                <Calendar />
                                                 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Todo Item</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Todo Item </button>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Vendor</button>
-                                                <button type="button" class="btn btn-primary">Close Event Details</button>
+                                                <button type="button" class="btn btn-primary" >Close Event Details</button>
                                             </div>
                                         </div>
                                     </div>
